@@ -62,23 +62,23 @@ class MazeRenderer {
          * These deliberately match the dark green site design.
          */
 
-        this.backgroundColour = "#090d12";
+        this.backgroundColour = "#f8fafd";
 
-        this.wallColour = "#52606f";
+        this.wallColour = "#637991";
 
-        this.unvisitedColour = "#090d12";
+        this.unvisitedColour = "#f8fafd";
 
-        this.visitedColour = "#101c1c";
+        this.visitedColour = "#eef5ff";
 
-        this.activeColour = "#38d39f";
+        this.activeColour = "#0868f7";
 
-        this.solverVisitedColour = "#162330";
+        this.solverVisitedColour = "#dfeafa";
 
-        this.solutionColour = "#38d39f";
+        this.solutionColour = "#a7c8ff";
 
-        this.startColour = "#38d39f";
+        this.startColour = "#0868f7";
 
-        this.endColour = "#d8dee9";
+        this.endColour = "#ee685d";
 
 
         /*

@@ -325,10 +325,10 @@ document.addEventListener(
                 case "working":
 
                     statusDot.style.background =
-                        "#38d39f";
+                        "#0868f7";
 
                     statusDot.style.boxShadow =
-                        "0 0 10px rgba(56, 211, 159, 0.7)";
+                        "0 0 10px rgba(8, 104, 247, 0.7)";
 
                     break;
 
@@ -336,10 +336,10 @@ document.addEventListener(
                 case "complete":
 
                     statusDot.style.background =
-                        "#38d39f";
+                        "#0868f7";
 
                     statusDot.style.boxShadow =
-                        "0 0 8px rgba(56, 211, 159, 0.45)";
+                        "0 0 8px rgba(8, 104, 247, 0.45)";
 
                     break;
 
@@ -485,6 +485,7 @@ document.addEventListener(
                 "Ready",
                 "ready"
             );
+        updateButtonStates();
 
         }
 

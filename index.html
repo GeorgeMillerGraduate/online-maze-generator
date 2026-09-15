@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Generate mazes with animated recursive backtracking and watch the solver find a route.">
+  <title>Maze Studio | jenga-code</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../" class="site-logo">
+      <span class="logo-fallback" aria-hidden="true">jenga<span>-code</span></span><img class="logo-image" src="../../images/logo.png"
+           alt="jenga-code home" width="200" height="50" onload="this.previousElementSibling.hidden=true" onerror="this.hidden=true">
+    </a>
+
+    <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+      <a href="../../">Home</a>
+      <a href="../../projects/" class="active" aria-current="location">Projects</a>
+      <a href="../../subjects/">Subjects</a>
+      <a href="../../tutorials/">Tutorials</a>
+      <a href="../../blog/">Blog</a>
+      <a href="../../about/">About</a>
+      <a href="../../contact/">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="https://github.com/GeorgeMillerGraduate" class="social-link"
+         aria-label="GitHub">GH</a>
+      <a href="../../blog/feed/" class="social-link" aria-label="RSS feed">RSS</a>
+      <a href="../../blog/" class="subscribe-button">Read the blog</a>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="page-heading">
+    <div><p class="eyebrow"><a href="../../projects/">THE PLAYGROUND</a><span>/</span> ALGORITHMS</p><h1>Maze studio<span>.</span></h1></div>
+    <p>Every turn is a new possibility.</p>
+  </div>
+  <section class="studio" id="generator" aria-label="Maze generator">
+    <aside class="controls" aria-label="Maze controls">
+      <div class="control-heading"><p class="eyebrow">BUILD &amp; EXPLORE</p><h2>Find your way.</h2></div>
+      <fieldset><legend>Dimensions</legend>
+        <div class="dimension-grid"><label for="mazeWidth">Width<input id="mazeWidth" type="number" min="5" max="100" value="40"></label><label for="mazeHeight">Height<input id="mazeHeight" type="number" min="5" max="100" value="25"></label></div>
+        <p class="help">5–100 cells in each direction.</p>
+      </fieldset>
+      <label for="algorithm">Generation algorithm</label>
+      <select id="algorithm"><option value="backtracking">Recursive backtracking</option></select>
+      <label for="speed">Animation speed</label>
+      <input id="speed" type="range" min="1" max="100" value="60">
+      <div class="range-labels"><span>Slow</span><span>Fast</span></div>
+      <button id="generateButton" class="primary" type="button">Generate maze →</button>
+      <div class="button-row"><button id="solveButton" type="button" disabled>Solve maze</button><button id="clearButton" type="button">Clear</button></div>
+      <div class="statistics"><div><span>SIZE</span><strong id="sizeDisplay">40 × 25</strong></div><div><span>CELLS</span><strong id="cellDisplay">1,000</strong></div></div>
+      <details class="about" id="about"><summary>How it works</summary><p>Depth-first backtracking carves passages into unvisited cells. At a dead end, it returns to an earlier cell and tries another direction.</p><p>The result is a perfect maze: all cells are connected, with exactly one simple route between any two cells. Generate a maze, then choose Solve maze to reveal the route.</p></details>
+      <p class="help">Change the speed while the animation runs. Clear cancels the current operation.</p>
+      <div class="ad-slot" aria-label="Reserved advertisement">ADVERTISEMENT</div>
+    </aside>
+    <section class="visualiser" aria-label="Maze visualisation">
+      <div class="canvas-heading"><strong>Your maze</strong><div class="status" role="status"><span class="status-dot"></span><span id="statusText">Ready</span></div></div>
+      <div class="canvas-container"><canvas id="mazeCanvas" width="1200" height="700" aria-label="Generated maze and solution">Generate a maze, then select Solve maze. Progress is reported above.</canvas></div>
+      <div class="legend" aria-label="Maze colour legend"><span><i class="start"></i>Start</span><span><i class="active"></i>Current cell</span><span><i class="visited"></i>Explored</span><span><i class="route"></i>Solution</span><span><i class="end"></i>Exit</span></div>
+    </section>
+  </section>
+  <footer><a class="brand" href="../../">jenga<span>-code</span></a><span>Built with curiosity.</span><nav aria-label="Footer navigation"><a href="../../projects/">Projects</a><a href="../../blog/">Blog</a><a href="../../contact/">Contact</a></nav></footer>
+</main>
+<script src="js/MazeCell.js"></script>
+<script src="js/MazeGrid.js"></script>
+<script src="js/MazeGenerator.js"></script>
+<script src="js/MazeSolver.js"></script>
+<script src="js/MazeRenderer.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
